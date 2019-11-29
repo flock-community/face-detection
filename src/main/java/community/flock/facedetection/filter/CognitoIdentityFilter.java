@@ -1,9 +1,10 @@
-package com.amazonaws.serverless.sample.springboot2.filter;
+package community.flock.facedetection.filter;
 
 
 import com.amazonaws.serverless.proxy.RequestReader;
 import com.amazonaws.serverless.proxy.model.AwsProxyRequestContext;
 
+import community.flock.facedetection.StreamLambdaHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +21,7 @@ import java.io.IOException;
 /**
  * Simple Filter implementation that looks for a Cognito identity id in the API Gateway request context
  * and stores the value in a request attribute. The filter is registered with aws-serverless-java-container
- * in the onStartup method from the {@link com.amazonaws.serverless.sample.springboot2.StreamLambdaHandler} class.
+ * in the onStartup method from the {@link StreamLambdaHandler} class.
  */
 public class CognitoIdentityFilter implements Filter {
     public static final String COGNITO_IDENTITY_ATTRIBUTE = "com.amazonaws.serverless.cognitoId";

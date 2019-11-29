@@ -10,12 +10,12 @@
  * OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.serverless.sample.springboot2.controller;
+package community.flock.facedetection.controller;
 
 
 
-import com.amazonaws.serverless.sample.springboot2.model.Pet;
-import com.amazonaws.serverless.sample.springboot2.model.PetData;
+import community.flock.facedetection.model.Pet;
+import community.flock.facedetection.model.PetData;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

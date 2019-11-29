@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Example Pet Store API written with SpringBoot with the aws-serverless-java-container library
+Description: Face detection AWS stack to discover a unique 'fingerprint' of a face and find it in public photo albums
 
 Globals:
   Api:
@@ -11,9 +11,9 @@ Resources:
   PetStoreFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: com.amazonaws.serverless.sample.springboot2.StreamLambdaHandler::handleRequest
+      Handler: community.flock.facedetection.StreamLambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: target/serverless-springboot2-example-1.0-SNAPSHOT-lambda-package.zip
+      CodeUri: target/face-detection-1.0-SNAPSHOT-lambda-package.zip
       MemorySize: 1512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 60
@@ -29,4 +29,4 @@ Outputs:
     Description: URL for application
     Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/pets'
     Export:
-      Name: SpringBootPetStoreApi
+      Name: SpringBootPetStoreFallbackApi
