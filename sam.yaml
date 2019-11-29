@@ -15,7 +15,10 @@ Resources:
       Runtime: java8
       CodeUri: target/face-detection-1.0-SNAPSHOT-lambda-package.zip
       MemorySize: 1512
-      Policies: AWSLambdaBasicExecutionRole
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonRekognitionFullAccess
+        - AmazonS3ReadOnlyAccess
       Timeout: 60
       Events:
         GetResource:
